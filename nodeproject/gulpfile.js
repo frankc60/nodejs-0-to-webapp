@@ -16,6 +16,13 @@ gulp.task("style", function() {
 gulp.task("inject", function() {
     
     var wiredep = require("wiredep").stream;
+    var inject = require("gulp-inject");
+    var injectSrc = gulp.src(["./public/css/*.css","./public/js/*.js"]);
+    
+    var injectOptions = {
+            ignorePath: "/public"
+    };
+    
     var options = { 
             bowerJson: require("./bower.json"),
             directory:  "./bower_components",
@@ -25,6 +32,7 @@ gulp.task("inject", function() {
     
     return gulp.src("./src/views/*.html")
         .pipe(wiredep(options))
+        .pipe(inject(injectSrc, injectOptions))
         .pipe(gulp.dest("./src/views"));
     
 })
