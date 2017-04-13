@@ -17,7 +17,8 @@ app.set("view engine", "ejs");
 app.get("/", function(req, res) {
    // res.send("hi Frank!");
     res.render("index", {  
-        list: ["first val", "sec value", "3rd value"]
+        list: ["first val", "sec value", "3rd value"],
+        nav: ["Services", "Portfolio", "About", "Team", "Contact", "NewThing"]
         
     });
 });

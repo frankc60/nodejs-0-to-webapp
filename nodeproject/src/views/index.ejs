@@ -71,10 +71,16 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    
+                    <% for(var x=0; x < nav.length; x++) { %>
+                    
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#<%= nav[x].toLowerCase() %>"><%= nav[x] %></a>
                     </li>
-                    <li>
+                    
+                    <% } %>
+                    
+                  <!--  <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
@@ -85,7 +91,7 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
