@@ -3,6 +3,7 @@ var app = express();
 
 var port = process.env.PORT; //needed by cloud9
 
+var eventRouter = express.Router();
 
 app.use(express.static("public"));
 //eg. https://mean-stack-frankc60.c9users.io/css/agency.css
@@ -13,20 +14,35 @@ app.use(express.static("bower_components"));
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
+eventRouter.route("/") //https://mean-stack-frankc60.c9users.io/Events
+    .get(function(req,res) {
+        res.send("Hello Events"); 
+    });
+
+eventRouter.route("/event") //https://mean-stack-frankc60.c9users.io/Events/event
+    .get(function(req,res) {
+        res.send("Hello single event!!"); 
+    });
+
+
+
+app.use("/Events", eventRouter);
+
 //routing example
 app.get("/", function(req, res) {
    // res.send("hi Frank!");
     res.render("index", {  
         list: ["first val", "sec value", "3rd value"],
-        nav: ["Services", "Portfolio", "About", "Team", "Contact", "NewThing"]
-        
+        nav: [
+            {Link: "Services", Text: "Services"}, 
+            {Link: "Portfolio", Text: "Portfolio"}, 
+            {Link: "About", Text: "About"}, 
+            {Link: "Team", Text: "Team"}, 
+            {Link: "Contact", Text: "Contact"}, 
+            {Link: "Events", Text: "Events"}
+        ]
     });
 });
-
-app.get("/routing", function(req, res) {
-    res.send("hi routing!");
-});
-
 
 
 app.listen(port, function(err) {
