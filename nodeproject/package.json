@@ -16,7 +16,9 @@
   "scripts": {
     "start": "node app.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/frankc60/nodejs-0-to-webapp/issues"
