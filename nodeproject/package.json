@@ -1,0 +1,25 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankc60/nodejs-0-to-webapp.git"
+  },
+  "author": "",
+  "dependencies": {
+    "async": "^0.2.8",
+    "express": "^3.21.2",
+    "socket.io": "^0.9.14"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {},
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankc60/nodejs-0-to-webapp/issues"
+  },
+  "homepage": "https://github.com/frankc60/nodejs-0-to-webapp#readme"
+}
