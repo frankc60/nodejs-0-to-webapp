@@ -9,6 +9,9 @@ app.use(express.static("public"));
 app.use(express.static("src/views"));
 //eg. https://mean-stack-frankc60.c9users.io/index.html
 
+app.use(express.static("bower_components"));
+//bower components now available
+
 
 //routing example
 app.get("/", function(req, res) {

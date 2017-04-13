@@ -1,0 +1,16 @@
+frankc60:~/workspace/nodeproject (master) $ git remote add origin https://github.com/frankc60/nodejs-0-to-webapp
+frankc60:~/workspace/nodeproject (master) $ git remote -v
+origin  https://github.com/frankc60/nodejs-0-to-webapp (fetch)
+origin  https://github.com/frankc60/nodejs-0-to-webapp (push)
+frankc60:~/workspace/nodeproject (master) $ git push
+Username for 'https://github.com': frankc60
+Password for 'https://frankc60@github.com': 
+
+
+should already be there, so check with 
+>git remove -v
+
+then 
+>git push
+
+and login to upload push
