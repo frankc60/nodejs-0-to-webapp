@@ -4,6 +4,9 @@ var app = express();
 var port = process.env.PORT; //needed by cloud9
 
 var eventRouter = require("./src/routes/eventRoutes");
+var dbRouter = require("./src/routes/dbRoutes");
+
+
 
 app.use(express.static("public"));
 //eg. https://mean-stack-frankc60.c9users.io/css/agency.css
@@ -15,9 +18,10 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 
-
-
 app.use("/Events", eventRouter);
+
+app.use("/Db",dbRouter);
+
 
 //routing example
 app.get("/", function(req, res) {
