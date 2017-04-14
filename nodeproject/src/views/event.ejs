@@ -263,7 +263,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <% for(var t=0; t<events.length;t++) { %>
+                 
                         
                         <li>
                             <div class="timeline-image">
@@ -271,18 +271,17 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4><%= events[t].date %> | <%= events[t].time %></h4>
-                                    <h4 class="subheading"><%= events[t].name %></h4>
+                                    <h4><%= events.date %> | <%= events.time %></h4>
+                                    <h4 class="subheading"><%= events.name %></h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">
-                                        <a href="/events/<%= t %>"><%= events[t].description %></a>
+                                <%= events.description %>
                                     </p>
                                 </div>
                             </div>
                         </li>
                         
-                        <% } %>
                         
                       <!--  <li>
                             <div class="timeline-image">

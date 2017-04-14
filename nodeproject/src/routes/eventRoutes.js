@@ -40,9 +40,23 @@ eventRouter.route("/") //https://mean-stack-frankc60.c9users.io/Events/
     });
     
   
-eventRouter.route("/event") //https://mean-stack-frankc60.c9users.io/Events/event
+eventRouter.route("/:id") //https://mean-stack-frankc60.c9users.io/Events/event
     .get(function(req,res) {
-        res.send("Hello single event!!"); 
+        var id = req.params.id;
+       // res.send("Hello single event!! id:" + id); 
+        res.render("event", {  
+            list: ["aa val", "bb value", "3rd value"],
+            nav: [
+                {Link: "Services", Text: "Services"}, 
+                {Link: "Portfolio", Text: "Portfolio"}, 
+                {Link: "About", Text: "About"}, 
+                {Link: "Team", Text: "Team"}, 
+                {Link: "Contact", Text: "Contact"}, 
+                {Link: "Events", Text: "Events"}
+            ],
+            events: eventsData[id]
+        });
+       
     });
 
     

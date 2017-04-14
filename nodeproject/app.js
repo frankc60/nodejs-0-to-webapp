@@ -35,6 +35,21 @@ app.get("/", function(req, res) {
     });
 });
 
+app.get("/:id", function(req, res) {
+   // res.send("hi Frank!");
+    res.render("index", {  
+        list: ["first val", "sec value", "3rd value"],
+        nav: [
+            {Link: "Services", Text: "Services"}, 
+            {Link: "Portfolio", Text: "Portfolio"}, 
+            {Link: "About", Text: "About"}, 
+            {Link: "Team", Text: "Team"}, 
+            {Link: "Contact", Text: "Contact"}, 
+            {Link: "Events", Text: "Events"}
+        ]
+    });
+});
+
 
 app.listen(port, function(err) {
    console.log("the server is running on port " + port); 
